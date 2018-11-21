@@ -20,8 +20,10 @@ import EmployeeLibrary.*;
                 "Java");
 
         System.out.println(((EmployeeCompanyDetails) employeeCompanyDetails).getCompanyMailId());
+
         System.out.println(
-                "Age is : "+ employeeCompanyDetails.getAge()
+                "Age is : "+ employeeCompanyDetails.getAge()+
+                        "\n DOB : " + employeeCompanyDetails.getDateOfbirth()
         );
 
 

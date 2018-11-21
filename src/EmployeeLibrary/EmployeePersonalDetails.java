@@ -1,15 +1,15 @@
 package EmployeeLibrary;
 
-import java.text.*;
+
 import java.time.*;
 import java.time.format.DateTimeFormatter;
-import java.util.*;
 
-public class EmployeePersonalDetails {
+
+public abstract class   EmployeePersonalDetails {
 
     private String employeeFirstName;
     private String employeeSecondName;
-    private LocalDate dateOfbirth;
+    private String dateOfbirth;
     private int age;
     private String gender;
     private String address;
@@ -21,14 +21,13 @@ public class EmployeePersonalDetails {
 
     public EmployeePersonalDetails() {
     }
-    SimpleDateFormat simpleDateFormat =new SimpleDateFormat("yyyy MM dd");
     DateTimeFormatter dateTimeFormatter = DateTimeFormatter.ofPattern("yyyy MM dd");
 
 
     public EmployeePersonalDetails(String employeeFirstName, String employeeSecondName, String dateOfbirth, String gender, String address, String mobileNumber, String emergencyContact, String personalEmailid, String maritalStatus) {
         this.employeeFirstName = employeeFirstName;
         this.employeeSecondName = employeeSecondName;
-        this.dateOfbirth = LocalDate.parse(dateOfbirth,dateTimeFormatter);
+        this.dateOfbirth = dateOfbirth;
         this.age =age(dateOfbirth);
         this.gender = gender;
         this.address = address;
@@ -45,7 +44,7 @@ public class EmployeePersonalDetails {
         return period.getYears();
     }
 
-
+// **********************getters & Setters**********************************************
     public String getEmployeeFirstName() {
         return employeeFirstName;
     }
@@ -62,11 +61,11 @@ public class EmployeePersonalDetails {
         this.employeeSecondName = employeeSecondName;
     }
 
-    public LocalDate getDateOfbirth() {
+    public String getDateOfbirth() {
         return dateOfbirth;
     }
 
-    public void setDateOfbirth(LocalDate dateOfbirth) {
+    public void setDateOfbirth(String dateOfbirth) {
         this.dateOfbirth = dateOfbirth;
     }
 

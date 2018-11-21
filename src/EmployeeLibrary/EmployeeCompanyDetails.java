@@ -1,32 +1,24 @@
 package EmployeeLibrary;
 
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
-import java.util.Date;
-
 public class EmployeeCompanyDetails extends EmployeePersonalDetails{
     private static int employeeId;
-    private Date dateofJoining;
+    private String dateofJoining;
     private String department;
     private String jobPosition;
     private String areaOfSpecialisation;
     private String companyMailId;
     private String  salaryPerhour;
-    private int count =01;
+    private int count =100;
 
 
     public EmployeeCompanyDetails(String employeeFirstName, String employeeSecondName, String dateOfbirth, String gender, String address, String mobileNumber, String emergencyContact, String personalEmailid, String maritalStatus, String dateofJoining, String department, String jobPosotion, String areaOfSpecialisation) {
         super(employeeFirstName, employeeSecondName, dateOfbirth, gender, address, mobileNumber, emergencyContact, personalEmailid, maritalStatus);
         employeeId = count++;
-        try {
-            this.dateofJoining = simpleDateFormat.parse(dateofJoining);
-        } catch (ParseException e) {
-            e.printStackTrace();
-        }
+        this.dateofJoining = dateofJoining;
         this.department = department;
         this.jobPosition = jobPosotion;
         this.areaOfSpecialisation = areaOfSpecialisation;
-        this.companyMailId = employeeFirstName + this.employeeId + "@maveric-systems.com";
+        this.companyMailId = employeeFirstName.toLowerCase() + this.employeeId + "@maveric-systems.com";
     }
 
 
@@ -43,11 +35,11 @@ public class EmployeeCompanyDetails extends EmployeePersonalDetails{
         EmployeeCompanyDetails.employeeId = employeeId;
     }
 
-    public Date getDateofJoining() {
+    public String getDateofJoining() {
         return dateofJoining;
     }
 
-    public void setDateofJoining(Date dateofJoining) {
+    public void setDateofJoining(String dateofJoining) {
         this.dateofJoining = dateofJoining;
     }
 
