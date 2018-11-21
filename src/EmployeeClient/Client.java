@@ -5,23 +5,26 @@ import EmployeeLibrary.*;
 
     public class Client {
     public static void main(String[] args) {
-//        EmployeePersonalDetails employeeCompanyDetails= new EmployeeCompanyDetails("Mohan",
-//                "Murugesan",
-//                "13/02/1998",
-//                "Male",
-//                "Kodumudi",
-//                "9786986811",
-//                "9025638538",
-//                "mohanmurugesan02@gmail.com",
-//                "Single",
-//                "13/02/1998",
-//                "Developer",
-//                "Junior",
-//                "Java");
-//
-//        System.out.println(((EmployeeCompanyDetails) employeeCompanyDetails).getCompanyMailId());
+        EmployeePersonalDetails employeeCompanyDetails= new EmployeeCompanyDetails("Mohan",
+                "Murugesan",
+                "1998 02 13",
+                "Male",
+                "Kodumudi",
+                "9786986811",
+                "9025638538",
+                "mohanmurugesan02@gmail.com",
+                "Single",
+                "2018 02 13",
+                "Developer",
+                "Junior",
+                "Java");
 
-        EmployeePersonalDetails employeePersonalDetails =new EmployeePersonalDetails();
+        System.out.println(((EmployeeCompanyDetails) employeeCompanyDetails).getCompanyMailId());
+        System.out.println(
+                "Age is : "+ employeeCompanyDetails.getAge()
+        );
+
+
 
 
 

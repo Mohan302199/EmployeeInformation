@@ -9,29 +9,27 @@ public class EmployeePersonalDetails {
 
     private String employeeFirstName;
     private String employeeSecondName;
-    private Date dateOfbirth;
+    private LocalDate dateOfbirth;
+    private int age;
     private String gender;
     private String address;
     private String mobileNumber;
     private String emergencyContact;
     private String personalEmailid;
     private String maritalStatus;
-    private String age;
+
 
     public EmployeePersonalDetails() {
     }
     SimpleDateFormat simpleDateFormat =new SimpleDateFormat("yyyy MM dd");
+    DateTimeFormatter dateTimeFormatter = DateTimeFormatter.ofPattern("yyyy MM dd");
 
 
     public EmployeePersonalDetails(String employeeFirstName, String employeeSecondName, String dateOfbirth, String gender, String address, String mobileNumber, String emergencyContact, String personalEmailid, String maritalStatus) {
         this.employeeFirstName = employeeFirstName;
         this.employeeSecondName = employeeSecondName;
-        try {
-            this.dateOfbirth = simpleDateFormat.parse(dateOfbirth);
-        } catch (ParseException e) {
-            e.printStackTrace();
-        }
-        age(this.dateOfbirth);
+        this.dateOfbirth = LocalDate.parse(dateOfbirth,dateTimeFormatter);
+        this.age =age(dateOfbirth);
         this.gender = gender;
         this.address = address;
         this.mobileNumber = mobileNumber;
@@ -40,11 +38,11 @@ public class EmployeePersonalDetails {
         this.maritalStatus = maritalStatus;
     }
 
-    public int age(Date dateOfbirth){
+    public int age(String dateOfbirth){
         LocalDate today = LocalDate.now();                          //Today's date
-        LocalDate birthday = LocalDate.of();  //Birth date
-
-        Period p = Period.between(birthday, today);
+        LocalDate birthday = LocalDate.parse(dateOfbirth,dateTimeFormatter);  //Birth date
+        Period period = Period.between(birthday, today);
+        return period.getYears();
     }
 
 
@@ -64,11 +62,11 @@ public class EmployeePersonalDetails {
         this.employeeSecondName = employeeSecondName;
     }
 
-    public Date getDateOfbirth() {
+    public LocalDate getDateOfbirth() {
         return dateOfbirth;
     }
 
-    public void setDateOfbirth(Date dateOfbirth) {
+    public void setDateOfbirth(LocalDate dateOfbirth) {
         this.dateOfbirth = dateOfbirth;
     }
 
@@ -120,11 +118,11 @@ public class EmployeePersonalDetails {
         this.maritalStatus = maritalStatus;
     }
 
-    public String getAge() {
+    public int getAge() {
         return age;
     }
 
-    public void setAge(String age) {
+    public void setAge(int age) {
         this.age = age;
     }
 }
