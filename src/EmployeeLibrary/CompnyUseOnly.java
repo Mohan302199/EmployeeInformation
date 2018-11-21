@@ -1,6 +1,8 @@
 package EmployeeLibrary;
 
-public class CompnyUseOnly extends EmployeeDetails {
+import java.time.LocalDate;
+
+public class CompnyUseOnly extends EmployeeDetails implements Calculation{
     private String employeePANNnmber;
     private boolean isInsured;
     private int numberOfInsuredPeople;
@@ -19,5 +21,23 @@ public class CompnyUseOnly extends EmployeeDetails {
         this.isInsured = isInsured;
         this.numberOfInsuredPeople = numberOfInsuredPeople;
         this.advanceAmount = advanceAmount;
+    }
+
+    @Override
+    public int salary(int numberOfHolidays, int salaryPerHour, int prepaid) {
+        int finalSalary;
+        LocalDate today = LocalDate.now();
+        System.out.println(today.getMonthValue());
+        return 0;
+    }
+
+    @Override
+    public int insurance(int numberOfInsuredPeople, int InsurranceAmount) {
+        return 0;
+    }
+
+    @Override
+    public int taxToBePaid(int salry) {
+        return 0;
     }
 }

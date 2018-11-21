@@ -21,7 +21,7 @@ public abstract class EmployeeDetails {
     private String jobPosition;
     private String areaOfSpecialisation;
     private String companyMailId;
-    private long salaryPerhour;
+    private long salaryPerHour;
     private int count =100;
 
 
@@ -35,7 +35,7 @@ public abstract class EmployeeDetails {
     DateTimeFormatter dateTimeFormatter = DateTimeFormatter.ofPattern("yyyy MM dd");
 
 
-    public EmployeeDetails(String employeeFirstName, String employeeSecondName, String dateOfbirth, String gender, String address, String mobileNumber, String emergencyContact, String personalEmailid, String maritalStatus, String dateofJoining, String department, String jobPosition, String areaOfSpecialisation, long salaryPerhour) {
+    public EmployeeDetails(String employeeFirstName, String employeeSecondName, String dateOfbirth, String gender, String address, String mobileNumber, String emergencyContact, String personalEmailid, String maritalStatus, String dateofJoining, String department, String jobPosition, String areaOfSpecialisation, long salaryPerHour) {
         this();
         this.employeeFirstName = employeeFirstName;
         this.employeeSecondName = employeeSecondName;
@@ -51,7 +51,7 @@ public abstract class EmployeeDetails {
         this.department = department;
         this.jobPosition = jobPosition;
         this.areaOfSpecialisation = areaOfSpecialisation;
-        this.salaryPerhour = salaryPerhour;
+        this.salaryPerHour = salaryPerHour;
         this.companyMailId = employeeFirstName.toLowerCase() + this.employeeId + "@maveric-systems.com";
 
         System.out.println(
@@ -139,8 +139,8 @@ public abstract class EmployeeDetails {
         return companyMailId;
     }
 
-    public long getSalaryPerhour() {
-        return salaryPerhour;
+    public long getSalaryPerHour() {
+        return salaryPerHour;
     }
 
     public int getCount() {

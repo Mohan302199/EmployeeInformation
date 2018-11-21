@@ -2,11 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="dcea39e5-459f-42a6-8910-27e08065d898" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/EmployeeLibrary/CompnyUseOnly.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/EmployeeLibrary/Calculation.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/EmployeeDetails/EmployeeLibrary/EmployeeCompanyDetails.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/EmployeeDetails/EmployeeLibrary/EmployeePersonalDetails.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/EmployeeDetails/EmployeeClient/Client.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/EmployeeDetails/EmployeeClient/Client.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/EmployeeClient/Client.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/EmployeeClient/Client.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/EmployeeLibrary/CompnyUseOnly.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/EmployeeLibrary/CompnyUseOnly.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/EmployeeLibrary/EmployeeDetails.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/EmployeeLibrary/EmployeeDetails.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
@@ -30,23 +30,23 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
-          <entry key="java" value="9" />
+          <entry key="java" value="10" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="JAVA" value="9" />
+          <entry key="JAVA" value="10" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="dummy" value="16" />
-          <entry key="java" value="3238" />
+          <entry key="java" value="3743" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="JAVA" value="3238" />
+          <entry key="JAVA" value="3743" />
           <entry key="PLAIN_TEXT" value="16" />
         </counts>
       </usages-collector>
@@ -57,8 +57,20 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/EmployeeClient/Client.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="254">
-              <caret line="40" lean-forward="true" selection-start-line="40" selection-end-line="40" />
+            <state relative-caret-position="207">
+              <caret line="36" column="66" selection-start-line="36" selection-start-column="66" selection-end-line="36" selection-end-column="66" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/EmployeeLibrary/Calculation.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="45">
+              <caret line="3" column="61" selection-start-line="3" selection-start-column="61" selection-end-line="3" selection-end-column="61" />
             </state>
           </provider>
         </entry>
@@ -66,8 +78,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/EmployeeLibrary/EmployeeDetails.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="430">
-              <caret line="65" column="39" lean-forward="true" selection-start-line="65" selection-start-column="39" selection-end-line="65" selection-end-column="39" />
+            <state relative-caret-position="402">
+              <caret line="71" lean-forward="true" selection-start-line="71" selection-end-line="71" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -78,8 +90,14 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/EmployeeLibrary/CompnyUseOnly.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="120">
-              <caret line="8" column="117" selection-start-line="8" selection-start-column="117" selection-end-line="8" selection-end-column="117" />
+            <state relative-caret-position="162">
+              <caret line="24" lean-forward="true" selection-start-line="24" selection-end-line="24" />
+              <folding>
+                <element signature="e#1625#1626#0" expanded="true" />
+                <element signature="e#1649#1650#0" expanded="true" />
+                <element signature="e#1704#1705#0" expanded="true" />
+                <element signature="e#1728#1729#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -90,6 +108,7 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Class" />
+        <option value="Interface" />
       </list>
     </option>
   </component>
@@ -103,9 +122,10 @@
         <option value="$PROJECT_DIR$/src/EmployeeLibrary/EmployeePersonaldetails.java" />
         <option value="$PROJECT_DIR$/src/EmployeeLibrary/EmployeePersonalDetails.java" />
         <option value="$PROJECT_DIR$/src/EmployeeLibrary/EmployeeCompanyDetails.java" />
+        <option value="$PROJECT_DIR$/src/EmployeeLibrary/EmployeeDetails.java" />
+        <option value="$PROJECT_DIR$/src/EmployeeLibrary/Calculation.java" />
         <option value="$PROJECT_DIR$/src/EmployeeLibrary/CompnyUseOnly.java" />
         <option value="$PROJECT_DIR$/src/EmployeeClient/Client.java" />
-        <option value="$PROJECT_DIR$/src/EmployeeLibrary/EmployeeDetails.java" />
       </list>
     </option>
   </component>
@@ -167,7 +187,7 @@
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1542820512571" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1542825637738" />
     <property name="last_opened_file_path" value="$USER_HOME$/Desktop/Project/Employee Management System" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
@@ -226,7 +246,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="23076000" />
+    <option name="totallyTimeSpent" value="27255000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="67" y="25" width="1299" height="743" extended-state="6" />
@@ -241,13 +261,13 @@
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32952693" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.451876" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.21044046" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Database Changes" order="7" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Terminal" order="8" weight="0.16476347" />
+      <window_info anchor="bottom" id="Terminal" order="8" weight="0.10766721" />
       <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" />
       <window_info anchor="bottom" id="Version Control" order="10" show_stripe_button="false" />
       <window_info anchor="bottom" id="Messages" order="11" weight="0.32952693" />
@@ -271,17 +291,30 @@
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/src/EmployeeLibrary/EmployeeCompanyDetails.java" />
     <entry file="file://$PROJECT_DIR$/src/EmployeeLibrary/EmployeePersonalDetails.java" />
+    <entry file="file://$PROJECT_DIR$/src/EmployeeLibrary/Calculation.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="45">
+          <caret line="3" column="61" selection-start-line="3" selection-start-column="61" selection-end-line="3" selection-end-column="61" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/EmployeeLibrary/CompnyUseOnly.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="8" column="117" selection-start-line="8" selection-start-column="117" selection-end-line="8" selection-end-column="117" />
+        <state relative-caret-position="162">
+          <caret line="24" lean-forward="true" selection-start-line="24" selection-end-line="24" />
+          <folding>
+            <element signature="e#1625#1626#0" expanded="true" />
+            <element signature="e#1649#1650#0" expanded="true" />
+            <element signature="e#1704#1705#0" expanded="true" />
+            <element signature="e#1728#1729#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/EmployeeLibrary/EmployeeDetails.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="430">
-          <caret line="65" column="39" lean-forward="true" selection-start-line="65" selection-start-column="39" selection-end-line="65" selection-end-column="39" />
+        <state relative-caret-position="402">
+          <caret line="71" lean-forward="true" selection-start-line="71" selection-end-line="71" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -290,8 +323,11 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/EmployeeClient/Client.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="254">
-          <caret line="40" lean-forward="true" selection-start-line="40" selection-end-line="40" />
+        <state relative-caret-position="207">
+          <caret line="36" column="66" selection-start-line="36" selection-start-column="66" selection-end-line="36" selection-end-column="66" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
