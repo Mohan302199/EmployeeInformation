@@ -5,7 +5,7 @@ import EmployeeLibrary.*;
 
     public class Client {
     public static void main(String[] args) {
-        EmployeePersonalDetails employeeCompanyDetails= new EmployeeCompanyDetails("Mohan",
+        EmployeeDetails employeeDetails = new EmployeeDetails("MOhan",
                 "Murugesan",
                 "1998 02 13",
                 "Male",
@@ -14,16 +14,17 @@ import EmployeeLibrary.*;
                 "9025638538",
                 "mohanmurugesan02@gmail.com",
                 "Single",
-                "2018 02 13",
+                "13 02 2018",
+                " Citi",
                 "Developer",
-                "Junior",
-                "Java");
+                "java",
+                3000
+                );
 
-        System.out.println(((EmployeeCompanyDetails) employeeCompanyDetails).getCompanyMailId());
-
-        System.out.println(
-                "Age is : "+ employeeCompanyDetails.getAge()+
-                        "\n DOB : " + employeeCompanyDetails.getDateOfbirth()
+        System.out.println((employeeDetails).getCompanyMailId());
+                System.out.println(
+                "Age is : "+ employeeDetails.getAge()+
+                        "\n DOB : " + employeeDetails.getDateOfbirth()
         );
 
 
