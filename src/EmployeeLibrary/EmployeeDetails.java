@@ -4,7 +4,7 @@ import java.time.LocalDate;
 import java.time.Period;
 import java.time.format.DateTimeFormatter;
 
-public class EmployeeDetails {
+public abstract class EmployeeDetails {
     private String employeeFirstName;
     private String employeeSecondName;
     private String dateOfbirth;
@@ -53,6 +53,14 @@ public class EmployeeDetails {
         this.areaOfSpecialisation = areaOfSpecialisation;
         this.salaryPerhour = salaryPerhour;
         this.companyMailId = employeeFirstName.toLowerCase() + this.employeeId + "@maveric-systems.com";
+
+        System.out.println(
+                        "Hello "+ employeeFirstName +" "+ employeeSecondName+"," +
+                                "\n \t\t\tWelcome to Maveric systems" +
+                                "\n Your Employee Id is " + this.employeeId +
+                                "\n Your Mail id is "+this.companyMailId
+
+        );
     }
 //                          ****************Functions****************
     public int age(String dateOfbirth){
