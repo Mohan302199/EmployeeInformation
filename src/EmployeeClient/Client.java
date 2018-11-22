@@ -2,12 +2,13 @@
 
 import EmployeeLibrary.*;
 
+import java.text.SimpleDateFormat;
 import java.time.LocalDate;
 
 
     public class Client {
     public static void main(String[] args) {
-        /*EmployeeDetails employeeDetails = new CompnyUseOnly(
+        EmployeeDetails employeeDetails = new CompnyUseOnly(
                 "MOhan",                     //First name
                 "Murugesan",               //Lastname
                 "1998 02 13",                     // date of birth ( YYYY MM DD)
@@ -28,17 +29,8 @@ import java.time.LocalDate;
                 0                             //Advance Salary
                 );
 
-        ((CompnyUseOnly) employeeDetails).salary(1,20,100);
-        */
+        System.out.println(((CompnyUseOnly) employeeDetails).holidays(2));
 
-        LocalDate today =LocalDate.now();
-
-        LocalDate date = LocalDate.of(today.getYear(), today.getMonth(),1);
-        for(int i = 1; date.getDayOfMonth()!=today.getDayOfMonth();i++)
-        {
-            date = date.plusDays(1);
-            System.out.println(date);
-        }
 
 
 
