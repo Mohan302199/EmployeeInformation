@@ -4,7 +4,7 @@ import java.time.LocalDate;
 import java.time.Period;
 import java.time.format.DateTimeFormatter;
 
-public abstract class EmployeeDetails implements Calculation {
+public abstract class EmployeeDetails {
     private String employeeFirstName;
     private String employeeSecondName;
     private String dateOfbirth;
@@ -12,14 +12,11 @@ public abstract class EmployeeDetails implements Calculation {
     private String gender;
     private String address;
     private String mobileNumber;
-    private String emergencyContact;
     private String personalEmailid;
     private String maritalStatus;
     private static int employeeId;
     private String dateofJoining;
-    private String department;
     private String jobPosition;
-    private String areaOfSpecialisation;
     private String companyMailId;
     private long salaryPerHour;
     private int count =100;
@@ -35,7 +32,7 @@ public abstract class EmployeeDetails implements Calculation {
     DateTimeFormatter dateTimeFormatter = DateTimeFormatter.ofPattern("yyyy MM dd");
 
 
-    public EmployeeDetails(String employeeFirstName, String employeeSecondName, String dateOfbirth, String gender, String address, String mobileNumber, String emergencyContact, String personalEmailid, String maritalStatus, String dateofJoining, String department, String jobPosition, String areaOfSpecialisation, long salaryPerHour) {
+    public EmployeeDetails(String employeeFirstName, String employeeSecondName, String dateOfbirth, String gender, String address, String mobileNumber, String personalEmailid, String maritalStatus, String dateofJoining, String jobPosition,long salaryPerHour)throws CustomException {
         this();
         this.employeeFirstName = employeeFirstName;
         this.employeeSecondName = employeeSecondName;
@@ -44,21 +41,23 @@ public abstract class EmployeeDetails implements Calculation {
         this.gender = gender;
         this.address = address;
         this.mobileNumber = mobileNumber;
-        this.emergencyContact = emergencyContact;
         this.personalEmailid = personalEmailid;
         this.maritalStatus = maritalStatus;
         this.dateofJoining = dateofJoining;
-        this.department = department;
         this.jobPosition = jobPosition;
-        this.areaOfSpecialisation = areaOfSpecialisation;
-        this.salaryPerHour = salaryPerHour;
+        if(salaryPerHour<=0){
+            throw new CustomException("Salary per hour canot be negative");
+        }else{
+            this.salaryPerHour = salaryPerHour;
+        }
         this.companyMailId = employeeFirstName.toLowerCase() + this.employeeId + "@maveric-systems.com";
 
-        System.out.println(
-                        "Hello "+ employeeFirstName +" "+ employeeSecondName+"," +
-                                "\n \t\t\tWelcome to Maveric systems" +
-                                "\n Your Employee Id is " + this.employeeId +
-                                "\n Your Mail id is "+this.companyMailId
+        System.out.println("* * * * * * * * * * * * * * * * * * * * * * * * * * * "
+                        +"\n*  Hello "+ employeeFirstName +" "+ employeeSecondName+
+                                ",\n* \t\t\tWelcome to Maveric systems" +
+                                "\t\t\t\t*\n*  Your Employee Id is " + this.employeeId +
+                                "\t\t\t\t\t\t\t*\n*  Your Mail id is "+this.companyMailId+
+                                "\n* * * * * * * * * * * * * * * * * * * * * * * * * * * "
 
         );
     }
@@ -103,9 +102,7 @@ public abstract class EmployeeDetails implements Calculation {
         return mobileNumber;
     }
 
-    public String getEmergencyContact() {
-        return emergencyContact;
-    }
+
 
     public String getPersonalEmailid() {
         return personalEmailid;
@@ -123,17 +120,12 @@ public abstract class EmployeeDetails implements Calculation {
         return dateofJoining;
     }
 
-    public String getDepartment() {
-        return department;
-    }
+
 
     public String getJobPosition() {
         return jobPosition;
     }
 
-    public String getAreaOfSpecialisation() {
-        return areaOfSpecialisation;
-    }
 
     public String getCompanyMailId() {
         return companyMailId;
