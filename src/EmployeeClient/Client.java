@@ -29,8 +29,8 @@ import java.time.LocalDate;
                 0                             //Advance Salary
                 );
 
-        System.out.println(((CompnyUseOnly) employeeDetails).holidays(2));
-
+//        System.out.println(( employeeDetails).holidays(2));
+        System.out.println(employeeDetails.salary(2,20,30,1));
 
 
 
