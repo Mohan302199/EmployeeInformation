@@ -58,6 +58,7 @@ public class CompnyUseOnly extends EmployeeDetails implements Calculation{
                 this.numberOfSaturdays++;
             }
 
+
         }
         return leavesTaken+numberOfSaturdays+numberOfSundys;
     }
