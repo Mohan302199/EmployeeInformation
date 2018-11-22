@@ -8,6 +8,7 @@ public class CompnyUseOnly extends EmployeeDetails implements Calculation{
     private int numberOfInsuredPeople;
     private int advanceAmount;
     private int numberOfSundys=0,numberOfSaturdays=0;
+    private LocalDate today =LocalDate.now();
 
 
     public CompnyUseOnly(String employeePANNnmber, boolean isInsured, int numberOfInsuredPeople, int advanceAmount) {
@@ -26,16 +27,14 @@ public class CompnyUseOnly extends EmployeeDetails implements Calculation{
     }
 
     @Override
-    public int salary(int numberOfHolidays, int salaryPerHour, int prepaid) {
-        int finalSalary;
-        LocalDate today = LocalDate.now();
-        System.out.println(today.getMonthValue());
-        return 0;
+    public int salary(int leavesTaken, int salaryPerHour, int prepaid, int numberOfInsuredPeople) {
+        int noOfWorkingDays=(today.getDayOfMonth())-(holidays(leavesTaken));
+        return ((noOfWorkingDays*8*salaryPerHour)-prepaid-(insurance(numberOfInsuredPeople,300)));
     }
 
     @Override
-    public int insurance(int numberOfInsuredPeople, int InsurranceAmount) {
-        return 0;
+    public int insurance(int numberOfInsuredPeople, int insurranceAmount) {
+        return insurranceAmount*numberOfInsuredPeople;
     }
 
     @Override
@@ -45,12 +44,13 @@ public class CompnyUseOnly extends EmployeeDetails implements Calculation{
 
     @Override
     public int holidays(int leavesTaken) {
-        LocalDate today =LocalDate.now();
         LocalDate date = LocalDate.of(today.getYear(), today.getMonth(),1);
 
         for(int i = 1; date.getDayOfMonth()!=today.getDayOfMonth();i++)
         {
-            date = date.plusDays(1);
+            if(i!=1){
+                date = date.plusDays(1);
+            }
             String temp = date.getDayOfWeek() + "";
             if( temp.equalsIgnoreCase("SUNDAY")){
                 this.numberOfSundys++;

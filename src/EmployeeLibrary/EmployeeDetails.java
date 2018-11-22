@@ -4,7 +4,7 @@ import java.time.LocalDate;
 import java.time.Period;
 import java.time.format.DateTimeFormatter;
 
-public abstract class EmployeeDetails {
+public abstract class EmployeeDetails implements Calculation {
     private String employeeFirstName;
     private String employeeSecondName;
     private String dateOfbirth;
