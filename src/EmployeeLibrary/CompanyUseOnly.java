@@ -116,7 +116,7 @@ public class CompanyUseOnly extends EmployeeDetails implements ICalculation{
                         "\nPrepaid amount                                      : -"+ this.advanceAmount+
                         "\n                                                     -----------" +
                         "\nTotal Amount to be credited as Salary               : Rs."+salary() +
-                        "\nTax to be Paid (calculated as per employee age("+this.getAge()+")) : Rs."+taxToBePaid(salary())
+                        "\nTax to be Paid (calculated as per employee age("+this.getAge()+")) : Rs."+(int)taxToBePaid(salary())
                 );
     }
 
@@ -128,16 +128,16 @@ public class CompanyUseOnly extends EmployeeDetails implements ICalculation{
 
             if(yearsInCompany<=3){
                 System.out.println("Since you are working in the company for "+ yearsInCompany+" years, Your incentive Percentage is 5%." +
-                        "\nHence your Salary per hour from next year will be Rs. " +this.getSalaryPerHour()*1.05);
+                        "\nHence your Salary per hour from next year will be Rs." +((int)(this.getSalaryPerHour()*1.05)));;
             }else if(yearsInCompany<=5){
                 System.out.println("Since you are working in the company for "+ yearsInCompany+" years, Your incentive Percentage is 10%." +
-                        "\nHence your Salary per hour from next year will be Rs. " +this.getSalaryPerHour()*1.10);
+                        "\nHence your Salary per hour from next year will be Rs." +((int)(this.getSalaryPerHour()*1.10)));
             }else if(yearsInCompany<=8){
                 System.out.println("Since you are working in the company for "+ yearsInCompany+" years, Your incentive Percentage is 15%." +
-                        "\nHence your Salary per hour from next year will be Rs. " +this.getSalaryPerHour()*1.15);
+                        "\nHence your Salary per hour from next year will be Rs." +((int)(this.getSalaryPerHour()*1.15)));
             }else if(yearsInCompany>8){
                 System.out.println("Since you are working in the company for "+ yearsInCompany+" years, Your incentive Percentage is 20%." +
-                        "\nHence your Salary per hour from next year will be Rs. " +this.getSalaryPerHour()*1.20);
+                        "\nHence your Salary per hour from next year will be Rs." +((int)(this.getSalaryPerHour()*1.20)));
             }
 
 
