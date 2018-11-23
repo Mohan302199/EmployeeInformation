@@ -1,8 +1,10 @@
 package EmployeeLibrary;
 
 import java.time.LocalDate;
+import java.time.Period;
+import java.time.format.DateTimeParseException;
 
-public class CompanyUseOnly extends EmployeeDetails {
+public class CompanyUseOnly extends EmployeeDetails implements ICalculation{
     private String employeePANNnmber;
     private int numberOfInsuredPeople;
     private int advanceAmount;
@@ -10,6 +12,7 @@ public class CompanyUseOnly extends EmployeeDetails {
     private LocalDate today =LocalDate.now();
     private int noOfWorkingDays;
     private int leavesTaken;
+    private int yearsInCompany;
 
 
 
@@ -32,6 +35,14 @@ public class CompanyUseOnly extends EmployeeDetails {
             this.leavesTaken = leavesTaken;
         }
         numberOfWorkingDays();
+        try {
+            LocalDate dateOfJoining = LocalDate.parse((this.getDateofJoining()), dateTimeFormatter);
+            Period period = Period.between(dateOfJoining, today);
+            this.yearsInCompany = period.getYears();
+        }catch (DateTimeParseException e) {
+            throw new CustomException("Please enther the Date of joining in correct format YYYY MM DD");
+
+        }
     }
 
     public void numberOfWorkingDays(){
@@ -98,7 +109,7 @@ public class CompanyUseOnly extends EmployeeDetails {
     public void displaySalary(){
         System.out.println(
                 "\n\nHello " + getEmployeeFirstName()+
-                        "\n \t\t\t\tHere is your pay slip for the month of " +today.getMonth()+" "+today.getYear()+" upto till date"+
+                        ",\n \t\t\t\tHere is your pay slip for the month of " +today.getMonth()+" "+today.getYear()+" till today ("+today+")"+
                         "\nTotal number of working days till today             : " + noOfWorkingDays +"( Holidays : "+this.numberOfSaturdays+" Saturdays, "+this.numberOfSundays +" Sundays, "+leavesTaken+ " Leaves Taken)"+
                         "\nSalary for the working days                         :  "+ (noOfWorkingDays*8*(int)this.getSalaryPerHour())+
                         "\nInsurance amount to be paid                         : -"+(insurance(numberOfInsuredPeople,300))+
@@ -107,5 +118,28 @@ public class CompanyUseOnly extends EmployeeDetails {
                         "\nTotal Amount to be credited as Salary               : Rs."+salary() +
                         "\nTax to be Paid (calculated as per employee age("+this.getAge()+")) : Rs."+taxToBePaid(salary())
                 );
+    }
+
+    @Override
+    public void calculateIncentive() throws CustomException {
+        System.out.println("\n\t\t\t\t\t\tIncentive Calculator" +
+                           "\n\t\t\t\t\t\t--------------------");
+
+
+            if(yearsInCompany<=3){
+                System.out.println("Since you are working in the company for "+ yearsInCompany+" years, Your incentive Percentage is 5%." +
+                        "\nHence your Salary per hour from next year will be Rs. " +this.getSalaryPerHour()*1.05);
+            }else if(yearsInCompany<=5){
+                System.out.println("Since you are working in the company for "+ yearsInCompany+" years, Your incentive Percentage is 10%." +
+                        "\nHence your Salary per hour from next year will be Rs. " +this.getSalaryPerHour()*1.10);
+            }else if(yearsInCompany<=8){
+                System.out.println("Since you are working in the company for "+ yearsInCompany+" years, Your incentive Percentage is 15%." +
+                        "\nHence your Salary per hour from next year will be Rs. " +this.getSalaryPerHour()*1.15);
+            }else if(yearsInCompany>8){
+                System.out.println("Since you are working in the company for "+ yearsInCompany+" years, Your incentive Percentage is 20%." +
+                        "\nHence your Salary per hour from next year will be Rs. " +this.getSalaryPerHour()*1.20);
+            }
+
+
     }
 }

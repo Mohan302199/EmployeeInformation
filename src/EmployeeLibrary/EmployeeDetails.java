@@ -3,8 +3,9 @@ package EmployeeLibrary;
 import java.time.LocalDate;
 import java.time.Period;
 import java.time.format.DateTimeFormatter;
+import java.time.format.DateTimeParseException;
 
-public abstract class EmployeeDetails {
+public abstract class EmployeeDetails implements ICalculation {
     private String employeeFirstName;
     private String employeeSecondName;
     private String dateOfbirth;
@@ -40,7 +41,12 @@ public abstract class EmployeeDetails {
         this.age =age(dateOfbirth);
         this.gender = gender;
         this.address = address;
-        this.mobileNumber = mobileNumber;
+        if(mobileNumber.length()==10){
+            this.mobileNumber = mobileNumber;
+        }else{
+            throw new CustomException("Please Enter your mobile number correctly with 10 digits");
+        }
+
         this.personalEmailid = personalEmailid;
         this.maritalStatus = maritalStatus;
         this.dateofJoining = dateofJoining;
@@ -52,21 +58,28 @@ public abstract class EmployeeDetails {
         }
         this.companyMailId = employeeFirstName.toLowerCase() + this.employeeId + "@maveric-systems.com";
 
-        System.out.println("* * * * * * * * * * * * * * * * * * * * * * * * * * * "
-                        +"\n*  Hello "+ employeeFirstName +" "+ employeeSecondName+
-                                ",\n* \t\t\tWelcome to Maveric systems" +
-                                "\t\t\t\t*\n*  Your Employee Id is " + this.employeeId +
-                                "\t\t\t\t\t\t\t*\n*  Your Mail id is "+this.companyMailId+
-                                "\n* * * * * * * * * * * * * * * * * * * * * * * * * * * "
+        System.out.println("\n\n\t\t\t\t\t* * * * * * * * * * * * * * * * * * * * * * * * * * * "
+                        +"\n\t\t\t\t\t*  Hello "+ employeeFirstName +" "+ employeeSecondName+
+                                ",\n\t\t\t\t\t* \t\t\tWelcome to Maveric systems" +
+                                "\t\t\t\t*\n\t\t\t\t\t*  Your Employee Id is " + this.employeeId +
+                                "\t\t\t\t\t\t\t*\n\t\t\t\t\t*  Your Mail id is "+this.companyMailId+
+                                "\n\t\t\t\t\t* * * * * * * * * * * * * * * * * * * * * * * * * * * "
 
         );
     }
 //                          ****************Functions****************
-    public int age(String dateOfbirth){
-        LocalDate today = LocalDate.now();                          //Today's date
-        LocalDate birthday = LocalDate.parse(dateOfbirth,dateTimeFormatter);  //Birth date
-        Period period = Period.between(birthday, today);
-        return period.getYears();
+    public int age(String dateOfbirth) throws CustomException {
+        try {
+            LocalDate today = LocalDate.now();                          //Today's date
+            LocalDate birthday = LocalDate.parse(dateOfbirth, dateTimeFormatter);  //Birth date
+            Period period = Period.between(birthday, today);
+            return period.getYears();
+        }
+        catch (DateTimeParseException e) {
+            throw new CustomException("Please enther the Date of birth in correct format YYYY MM DD");
+
+        }
+
     }
 
 
