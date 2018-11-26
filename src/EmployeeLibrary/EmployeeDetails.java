@@ -41,11 +41,20 @@ public abstract class EmployeeDetails implements ICalculation {
         this.age =age(dateOfbirth);
         this.gender = gender;
         this.address = address;
-        if(mobileNumber.length()==10){
-            this.mobileNumber = mobileNumber;
-        }else{
-            throw new CustomException("Please Enter your mobile number correctly with 10 digits");
-        }
+
+            if (mobileNumber.length() == 10) {
+                try
+                {
+                    long mobileNumberIntiger = Integer.parseInt(mobileNumber);
+                    this.mobileNumber = mobileNumber;
+                }catch (NumberFormatException e){
+                    throw new CustomException("Mobile number cannot contain letters");
+                }
+
+            } else {
+                throw new CustomException("Please Enter your mobile number correctly with 10 digits");
+            }
+
 
         this.personalEmailid = personalEmailid;
         this.maritalStatus = maritalStatus;

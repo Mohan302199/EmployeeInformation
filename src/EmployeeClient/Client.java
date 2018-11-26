@@ -14,7 +14,7 @@ import EmployeeLibrary.*;
                     "1998 02 12",                     // date of birth ( YYYY MM DD)
                     "Male",                              //Gender (Male / Female)
                     "Kodumudi",                         // Address
-                    "9786986811",                  //Mobile number
+                    "97a6986811",                  //Mobile number
                     "mohanmurugesan02@gmail.com", //personal e-mail id
                     "Single",                       //Marital Status (single/ Maried)
                     "2000 02 20",                   //Date of Joining ( YYYY MM DD)
