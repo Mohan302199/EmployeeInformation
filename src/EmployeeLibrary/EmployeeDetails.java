@@ -45,7 +45,7 @@ public abstract class EmployeeDetails implements ICalculation {
             if (mobileNumber.length() == 10) {
                 try
                 {
-                    long mobileNumberIntiger = Integer.parseInt(mobileNumber);
+                    long mobileNumberIntiger = Long.parseLong(mobileNumber);
                     this.mobileNumber = mobileNumber;
                 }catch (NumberFormatException e){
                     throw new CustomException("Mobile number cannot contain letters");
