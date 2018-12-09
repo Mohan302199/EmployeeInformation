@@ -4,8 +4,8 @@ import java.time.LocalDate;
 import java.time.Period;
 import java.time.format.DateTimeParseException;
 
-public class CompanyUseOnly extends EmployeeDetails implements ICalculation{
-    private String employeePANNnmber;
+public class CompanyUseOnly extends EmployeeDetails implements ICalculation{// Inheritance
+    private String employeePANNnmber;     //encapsulation
     private int numberOfInsuredPeople;
     private int advanceAmount;
     private int numberOfSundays =0,numberOfSaturdays=0;
@@ -13,6 +13,7 @@ public class CompanyUseOnly extends EmployeeDetails implements ICalculation{
     private int noOfWorkingDays;
     private int leavesTaken;
     private int yearsInCompany;
+    private int incentive;
 
 
 
@@ -20,17 +21,17 @@ public class CompanyUseOnly extends EmployeeDetails implements ICalculation{
         super(employeeFirstName, employeeSecondName, dateOfbirth, gender, address, mobileNumber,personalEmailid, maritalStatus, dateofJoining,jobPosition,salaryPerhour);
         this.employeePANNnmber = employeePANNnmber;
         if(numberOfInsuredPeople<0){
-            throw new CustomException("Number of Insured people cannot be Negative");
+            throw new CustomException("Hi " + super.getEmployeeFirstName()+", Number of Insured people cannot be Negative");  // Exception handling
         }else {
             this.numberOfInsuredPeople = numberOfInsuredPeople;
         }
         if(advanceAmount<0){
-            throw new CustomException("Advance amount cannot be Negative");
+            throw new CustomException("Hi " + super.getEmployeeFirstName()+", Advance amount cannot be Negative");
         }else {
             this.advanceAmount = advanceAmount;
         }
         if(leavesTaken<0){
-            throw new CustomException("Leaves cannot be Negative");
+            throw new CustomException("Hi " + super.getEmployeeFirstName()+", Leaves cannot be Negative");
         }else {
             this.leavesTaken = leavesTaken;
         }
@@ -40,7 +41,7 @@ public class CompanyUseOnly extends EmployeeDetails implements ICalculation{
             Period period = Period.between(dateOfJoining, today);
             this.yearsInCompany = period.getYears();
         }catch (DateTimeParseException e) {
-            throw new CustomException("Please enther the Date of joining in correct format YYYY MM DD");
+            throw new CustomException("Hi " + super.getEmployeeFirstName()+", Please enther the Date of joining in correct format YYYY MM DD");
 
         }
     }
@@ -116,29 +117,51 @@ public class CompanyUseOnly extends EmployeeDetails implements ICalculation{
                         "\nPrepaid amount                                      : -"+ this.advanceAmount+
                         "\n                                                     -----------" +
                         "\nTotal Amount to be credited as Salary               : Rs."+salary() +
-                        "\nTax to be Paid (calculated as per employee age("+this.getAge()+")) : Rs."+(int)taxToBePaid(salary())
+                        "\nTax to be Paid                                      : Rs."+(int)taxToBePaid(salary())+
+                        "\n[calculated as per employee age("+this.getAge()+") and Salary]"
                 );
     }
 
     @Override
-    public void calculateIncentive() throws CustomException {
+    public void calculateIncentive(){
+
+        int incentivePercentage = 0;
         System.out.println("\n\t\t\t\t\t\tIncentive Calculator" +
-                           "\n\t\t\t\t\t\t--------------------");
+                           "\n\t\t\t\t\t\t--------------------" );
 
 
-            if(yearsInCompany<=3){
-                System.out.println("Since you are working in the company for "+ yearsInCompany+" years, Your incentive Percentage is 5%." +
-                        "\nHence your Salary per hour from next year will be Rs." +((int)(this.getSalaryPerHour()*1.05)));;
-            }else if(yearsInCompany<=5){
-                System.out.println("Since you are working in the company for "+ yearsInCompany+" years, Your incentive Percentage is 10%." +
-                        "\nHence your Salary per hour from next year will be Rs." +((int)(this.getSalaryPerHour()*1.10)));
-            }else if(yearsInCompany<=8){
-                System.out.println("Since you are working in the company for "+ yearsInCompany+" years, Your incentive Percentage is 15%." +
-                        "\nHence your Salary per hour from next year will be Rs." +((int)(this.getSalaryPerHour()*1.15)));
-            }else if(yearsInCompany>8){
-                System.out.println("Since you are working in the company for "+ yearsInCompany+" years, Your incentive Percentage is 20%." +
-                        "\nHence your Salary per hour from next year will be Rs." +((int)(this.getSalaryPerHour()*1.20)));
+            if(yearsInCompany<=3)
+            {
+                incentivePercentage =5;
+                incentive=((int)(this.getSalaryPerHour()*1.05));
             }
+            else {
+                if((yearsInCompany>3)  &&(yearsInCompany<=5))
+                {
+                    incentivePercentage =10;
+                    incentive=((int)(this.getSalaryPerHour()*1.10));
+                }
+                else{
+                    if((yearsInCompany>5)  &&(yearsInCompany<=8))
+                    {
+                        incentivePercentage =15;
+                        incentive=((int)(this.getSalaryPerHour()*1.15));
+                    }
+                    else{
+                        if(yearsInCompany>8)
+                        {
+                            incentivePercentage =20;
+                            incentive=((int)(this.getSalaryPerHour()*1.20));
+                        }
+                    }
+                }
+
+            }
+
+        System.out.println("Since you are working in the company for "+ yearsInCompany+" years, Your incentive Percentage is "+incentivePercentage +
+                        ".\nHence your Salary per hour from next year will be Rs." +incentive+".");
+
+
 
 
     }

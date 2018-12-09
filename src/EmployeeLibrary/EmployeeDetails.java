@@ -5,7 +5,7 @@ import java.time.Period;
 import java.time.format.DateTimeFormatter;
 import java.time.format.DateTimeParseException;
 
-public abstract class EmployeeDetails implements ICalculation {
+public abstract class EmployeeDetails implements ICalculation {// Class
     private String employeeFirstName;
     private String employeeSecondName;
     private String dateOfbirth;
@@ -29,8 +29,8 @@ public abstract class EmployeeDetails implements ICalculation {
 
     public EmployeeDetails(){
         employeeId = count++;
-    }
-    DateTimeFormatter dateTimeFormatter = DateTimeFormatter.ofPattern("yyyy MM dd");
+    }//constructor over loading
+    DateTimeFormatter dateTimeFormatter = DateTimeFormatter.ofPattern("yyyy MM dd"); // date formatter
 
 
     public EmployeeDetails(String employeeFirstName, String employeeSecondName, String dateOfbirth, String gender, String address, String mobileNumber, String personalEmailid, String maritalStatus, String dateofJoining, String jobPosition,long salaryPerHour)throws CustomException {
@@ -48,11 +48,11 @@ public abstract class EmployeeDetails implements ICalculation {
                     long mobileNumberIntiger = Long.parseLong(mobileNumber);
                     this.mobileNumber = mobileNumber;
                 }catch (NumberFormatException e){
-                    throw new CustomException("Mobile number cannot contain letters");
+                    throw new CustomException("Hi " + employeeFirstName+", Mobile number cannot contain letters");
                 }
 
             } else {
-                throw new CustomException("Please Enter your mobile number correctly with 10 digits");
+                throw new CustomException("Hi " + employeeFirstName+", Please Enter your mobile number correctly with 10 digits");
             }
 
 
@@ -61,7 +61,7 @@ public abstract class EmployeeDetails implements ICalculation {
         this.dateofJoining = dateofJoining;
         this.jobPosition = jobPosition;
         if(salaryPerHour<=0){
-            throw new CustomException("Salary per hour canot be negative");
+            throw new CustomException("Hi " + employeeFirstName+", Salary per hour canot be negative or zero");
         }else{
             this.salaryPerHour = salaryPerHour;
         }
@@ -79,13 +79,13 @@ public abstract class EmployeeDetails implements ICalculation {
 //                          ****************Functions****************
     public int age(String dateOfbirth) throws CustomException {
         try {
-            LocalDate today = LocalDate.now();                          //Today's date
+            LocalDate today = LocalDate.now();                          //Today's date     //Localdate class ( Class presentation)
             LocalDate birthday = LocalDate.parse(dateOfbirth, dateTimeFormatter);  //Birth date
             Period period = Period.between(birthday, today);
             return period.getYears();
         }
         catch (DateTimeParseException e) {
-            throw new CustomException("Please enther the Date of birth in correct format YYYY MM DD");
+            throw new CustomException("Hi " + employeeFirstName+", Please enther the Date of birth in correct format YYYY MM DD");
 
         }
 
@@ -100,64 +100,17 @@ public abstract class EmployeeDetails implements ICalculation {
         return employeeFirstName;
     }
 
-    public String getEmployeeSecondName() {
-        return employeeSecondName;
-    }
-
-    public String getDateOfbirth() {
-        return dateOfbirth;
-    }
-
     public int getAge() {
         return age;
-    }
-
-    public String getGender() {
-        return gender;
-    }
-
-    public String getAddress() {
-        return address;
-    }
-
-    public String getMobileNumber() {
-        return mobileNumber;
-    }
-
-
-
-    public String getPersonalEmailid() {
-        return personalEmailid;
-    }
-
-    public String getMaritalStatus() {
-        return maritalStatus;
-    }
-
-    public static int getEmployeeId() {
-        return employeeId;
     }
 
     public String getDateofJoining() {
         return dateofJoining;
     }
 
-
-
-    public String getJobPosition() {
-        return jobPosition;
-    }
-
-
-    public String getCompanyMailId() {
-        return companyMailId;
-    }
-
     public long getSalaryPerHour() {
         return salaryPerHour;
     }
 
-    public int getCount() {
-        return count;
-    }
+
 }
