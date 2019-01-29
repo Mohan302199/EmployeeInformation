@@ -20,7 +20,7 @@ public abstract class EmployeeDetails implements ICalculation {// Class
     private String jobPosition;
     private String companyMailId;
     private long salaryPerHour;
-    private int count =100;
+    private static int count =100;
 
 
 
